@@ -73,7 +73,7 @@ class Movie(db.Model):
     length = db.Column(db.String(100))  # 时长
     addtime = db.Column(db.DateTime, index=True, default=datetime.now)  # 添加时间
     comments = db.relationship("Comment",backref='movie')
-    
+
 
     def __repr__(self):
         return "Movie %r" % self.title
