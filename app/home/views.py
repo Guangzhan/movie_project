@@ -16,3 +16,8 @@ def login():
 @home.route("/logout/")
 def logout():
     return redirect(url_for("home.login"))
+
+
+@home.route("/regist/")
+def regist():
+    return render_template("home/regist.html")
