@@ -12,18 +12,18 @@
     <link rel="stylesheet" href="{{url_for('static',filename='base/css/bootstrap-movie.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='base/css/animate.css')}}">
     <style>
-        .navbar-brand>img {
+        .navbar-brand > img {
             display: inline;
         }
 
-    </style>
-    <style>
-        .media{
-            padding:3px;
-            border:1px solid #ccc
+        .media {
+            padding: 3px;
+            border: 1px solid #ccc
         }
 
     </style>
+    {% block css %} {% endblock %}
+
 </head>
 
 <body>
@@ -57,16 +57,18 @@
                     <a class="curlink" href="index.html"><span class="glyphicon glyphicon-film"></span>&nbsp;电影</a>
                 </li>
                 <li>
-                    <a class="curlink" href="{{ url_for('home.login')}}"><span class="glyphicon glyphicon-log-in"></span>&nbsp;登录</a>
+                    <a class="curlink" href="{{ url_for('home.login')}}"><span
+                            class="glyphicon glyphicon-log-in"></span>&nbsp;登录</a>
                 </li>
                 <li>
                     <a class="curlink" href="{{ url_for('home.regist')}}"><span class="glyphicon glyphicon-plus"></span>&nbsp;注册</a>
                 </li>
                 <li>
-                    <a class="curlink" href="{{url_for('home.logout')}}"><span class="glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
+                    <a class="curlink" href="{{url_for('home.logout')}}"><span
+                            class="glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
                 </li>
                 <li>
-                    <a class="curlink" href="user.html"><span class="glyphicon glyphicon-user"></span>&nbsp;会员</a>
+                    <a class="curlink" href="{{url_for('home.user')}}"><span class="glyphicon glyphicon-user"></span>&nbsp;会员</a>
                 </li>
             </ul>
         </div>
@@ -100,18 +102,18 @@
 <script src="{{url_for('static',filename='lazyload/jquery.lazyload.min.js')}}"></script>
 <script src="//cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
 <script>
-    $(function() {
+    $(function () {
         new WOW().init();
     })
 
 </script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("img.lazy").lazyload({
             effect: "fadeIn"
         });
     });
-
 </script>
+{% block js %} {% endblock %}
 </body>
 </html>
