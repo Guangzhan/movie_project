@@ -107,3 +107,5 @@ app/__pycache__
 app/__pycache__
 app/admin/__pycache__
 app/home/__pycache__
+app__pycache__/
+app/__pycache__/
